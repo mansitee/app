@@ -1,0 +1,269 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DuckDuckGo Lite Search API</title>
+
+  <style>
+
+    body {
+
+      font-family: 'Open Sans', sans-serif;
+
+    }
+
+    
+
+    #search-form {
+
+      margin: 2rem auto;
+
+      max-width: 500px;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+    }
+
+    
+
+    #search-input {
+
+      width: 100%;
+
+      padding: 1rem;
+
+      font-size: 1.2rem;
+
+      border-radius: 8px;
+
+      border: 1px solid #d0d0d0;
+
+      margin-right: 1rem;
+
+      margin-bottom: 1rem;
+
+    }
+
+    
+
+    #search-button {
+
+      padding: 1rem 2rem;
+
+      font-size: 1.2rem;
+
+      border-radius: 8px;
+
+      border: none;
+
+      background-color: #0078d7;
+
+      color: #fff;
+
+      cursor: pointer;
+
+      margin-bottom: 1rem;
+
+    }
+
+    
+
+    #search-results {
+
+      max-width: 500px;
+
+      margin: 2rem auto;
+
+    }
+
+    
+
+    .search-result {
+
+      margin-bottom: 1rem;
+
+      border-radius: 8px;
+
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+
+      padding: 1rem;
+
+    }
+
+    
+
+    .result-title {
+
+      font-size: 1.2rem;
+
+      font-weight: 700;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+    
+
+    .result-link {
+
+      font-size: 1rem;
+
+      color: #0078d7;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+    
+
+    .result-snippet {
+
+      font-size: 1rem;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <form id="search-form" onsubmit="searchDuckDuckGoLite(); return false;">
+
+    <input id="search-input" type="text" placeholder="Search DuckDuckGo Lite">
+
+    <button id="search-button" type="submit">Search</button>
+
+  </form>
+
+  
+
+  <div id="search-results"></div>
+
+  
+
+  <script>
+
+    function searchDuckDuckGoLite() {
+
+      const searchInput = document.getElementById('search-input').value;
+
+      const searchQuery = encodeURIComponent(searchInput);
+
+      const searchUrl = `https://duckduckgo.com/lite/?q=${searchQuery}&ko=-1&kl=wt-wt`;
+
+      const searchApiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(searchUrl)}`
+
+      
+
+      fetch(searchApiUrl)
+
+        .then(response => response.text())
+
+        .then(data => {
+
+          const parser = new DOMParser();
+
+          const htmlDoc = parser.parseFromString(data.contents, 'text/html');
+
+          const searchResults = htmlDoc.querySelectorAll('.result');
+
+          const searchDiv = document.getElementById('search-results');
+
+          searchResultsDiv.innerHTML = '';
+
+          
+
+          searchResults.forEach(result => {
+
+            const title = result.querySelector('a.result-link const url = result.querySelector('a.result-link').href;
+
+            const snippet = result.querySelector('.result-snippet').textContent;
+
+            
+
+            const resultDiv = document.createElement('div');
+
+            resultDiv.className = 'search-result';
+
+            
+
+            const titleDiv = document.createElement('div');
+
+            titleDiv.className = 'result-title';
+
+            titleDiv.textContent = title;
+
+            
+
+            const urlDiv = document.createElement('div');
+
+            urlDiv.className = 'result-link';
+
+            const urlLink = document.createElement('a');
+
+            urlLink.href = url;
+
+            urlLink.textContent = url;
+
+            urlDiv.appendChild(urlLink);
+
+            
+
+            const snippetDiv = document.createElement('div');
+
+            snippetDiv.className = 'result-snippet';
+
+            snippetDiv.textContent = snippet;
+
+            
+
+            resultDiv.appendChild(titleDiv);
+
+            resultDiv.appendChild(urlDiv);
+
+            resultDiv.appendChild(snippetDiv);
+
+            
+
+            searchResultsDiv.appendChild(resultDiv);
+
+          });
+
+        });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+4
