@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Man Sitee</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <link href="drawable/h5.css" rel="stylesheet"/>
+    <script src="drawable/vue.min.js"></script>
+    
+    <link href="http://seanzwx.github.io-master/seanzwx.github.io-master/app/tincat/common/h5.css" rel="stylesheet"/>
+    
+    <script src="http://seanzwx.github.io-master/seanzwx.github.io-master/app/tincat/common/vue.min.js"></script>
+  
+    
+</head>
+
+<body style="background-color: #dee7ec;">
+<div id="app">
+    <div class="h5-actionbar">
+        <img @click="history.back()" src="drawable/icon_back.svg"/>
+        <div>Link.u</div>  <a href="hot.html"style="font-weight: bold;padding-right: 16px;">Hot </a> <div style="font-weight:bold;padding-right: 16px;"> Welcome</div>
+    </div>   <div style="padding: 8px 16px 8px 16px;background-color: #f6f6f6;font-size: 14px;color:#000;">You can save game as miniapp for a better experience.</div>
+<div style="padding:0 5px 20px 5px;">  
+
+
+<div style="font-weight:bold;padding-top:40px;text-transform:uppercase;display:flex;margin:10px;">	
+	
+<div style="font-weight:bold;color:orange;font-size:20px;float:right;"> &raquo; </div> ideo dan foto</div> 
+
+	
+<div v-for="it in siteGroupArray">       <div style="font-weight: bold;padding: 16px 10px 10px 16px;text-align: center;align-items: center;justify-content: center;letter-spacing: 1.2px;border-radius: 4px;width: 100%;position: relative;">
+	 
+<div style="font-weight: bold;padding:4px 8px;text-transform:uppercase;display:flex;position: absolute;background:#ffffff;border-radius:10px;top:8px;">	
+	
+<div style="font-weight:bold;color:orange;float:right;"> &raquo; </div> {{it.title}}</div> </div>		 
+
+<div style="background:#ffffff;border-radius:10px;padding:10px 2px 10px 2px;tborder:1px solid rgba(13,28,39,0.6);">  
+	 
+<div style="column-count:3; column-gap:0.1em; padding: 0 1px;">	 
+            		 
+<div @click="openSite(it1.url)" v-for="it1 in it.siteArray" style="width:100%;padding:2px;">             <div style="font-size:15px;background-color:#f2f2f2;text-align: left;padding:10px 5px 10px 5px;color: #333333;border-radius:10px;tborder-left:2px solid #1abc9c;border:1px solid rgba(13, 28, 39, 0.6);tbox-shadow:0 8px 10px 0 rgba(0,0,0,0.1);font-family:'Raleway',sans-serif;">{{it1.label}}</div>  	 
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script> new Vue({el: "#app",
+data: function(){ return {siteGroupArray: [{ title: "Social",
+siteArray: [{label: "Instagram",
+url: "https://www.instagram.com"}, 
+{label: "Facebook",
+url: "https://www.facebook.com"}, 
+{label: "Twitter",url: "https://www.twitter.com"},  {label: "Tiktok",
+url: "https://www.tiktok.com/foryou"
+}, {label: "Likee",url: "https://likee.video"}, {label: "Twitch",
+url: "https://www.twitch.tv"}, {label: "Bigo",url: "https://www.bigo.tv"},{label: "Periscope",
+url: "https://www.periscope.tv"}, {
+label: "Lebih Lengkap dan terpercaya dengan website",url: "test.html"}] },
+                
+                
+ {title: "Video",
+siteArray: [{label: "Youtube",
+url: "https://www.youtube.com"}, {label: "Vimeo",url: "https://www.vimeo.com"}, {label: "DailyMotion",
+url: "https://www.dailymotion.com"}, {label: "MetaCafe",url: "https://www.metacafe.com"},  {label: "hulu",url: "https://www.hulu.com"}, {label: "9GAG",url: "https://9gag.com"}, {
+label: "Tiktok",url: "https://www.tiktok.com/foryou"}, {label: "Likee",
+url: "https://likee.video"}, {label: "Twitch",url: "https://www.twitch.tv"
+}, {label: "Bigo",url: "https://www.bigo.tv"},{label: "Periscope",url: "https://www.periscope.tv"}] },
+                
+                
+                
+{title:"downloader",
+siteArray: [{label: "Yt1s",
+url: "https://www.yt1s.com"}, {label: "Y2mate",url:"https://www.y2mate.com"}, {label:"YTmp3",url: "https://ytmp3.cc"}, {label: "Bit downloader",
+url: "https://bitdownloader.net"}, {
+label: "Durpy",url: "https://durpy.com"}, {label: "Keepsaveit",url: "https://keepsaveit.com/site"}, {label: "Ezdlvid.com",url: "https://ezdlvid.com"}, {label:"Ddownr",url: "https://ddownr.com"}, {label: "Catch.tube",url:"https://Catch.tube/"}, {label:"Savevid",url: "https://savevid.com"}, {label:"flash video",url:"https://flashvideodownloader.org"}, {label: "savetube",url:"https://savetube.com"},{label:"kcool online",url:"https://kcoolonline. com"}] },
+                
+                               
+{title: "News",
+siteArray: [{ label:"BBC",url: "https://www.bbc.com"}, { label: "CNN Indonesia", url: "https://www.cnnindonesia.com"}, {label: "Google News",url:"https://news.google.com"
+}, {label:"Dailymail",url:"https://www.dailymail.co.uk"}, {label: "Detik.com",url:"https://www.detik.com"},{label:"Kompas",url: "https://www.kompas.com"}, {label: "Republika",url: "https://www.republika.co.id"}, {label:"Jawapos",
+url:"https://www.jawapos.com"}, {label:"Antaranews",url:"https://www.antaranews.com"}, {label:"liputan6",
+url:"https://www.liputan6.com"} ] }, 
+
+
+{title:"Music",
+siteArray: [{label:"YouTube Music",
+url:"https://music.youtube.com"}, {
+label: "SoundCloud",url: "https://m.soundcloud.com"}, {label: "Spotify",
+url: "https://open.spotify.com"}, {
+label:"Ultimate Guitar",url:"https://www.ultimate-guitar.com"}, {label: "Aha music",url:"https://aha-music.com"}, {label:"Shazam",url: "https://www.shazam.com"}, {label: "Google music search",url: "https://www.google.com/musicsearch"} ] },
+                
+  
+{title:"Radio Online", 
+siteArray: [{label:"Radio Garden",
+url:"https://radio.garden"}, {label: "SoundCloud",url: "https://m.soundcloud.com"}, {label: "Spotify",
+url:"https://open.spotify.com"}, {
+label: "Ultimate Guitar",url: "https://www.ultimate-guitar.com"} ] },               
+                
+{title:"Anime",
+siteArray:[{label:"anilist",
+url:"https://anilist.co"}, {label: "myanimelist",url:"https://myanimelist.net"}, {label:"Anime planet",url:"https://www.anime-planet.com"}, {label:"trace.moe",
+url: "https://trace.moe"} ] },               
+                
+{title:"Books",
+siteArray: [{label:"Wattpad",url: "https://www.wattpad.com"}, {label: "Goodreads",url:"https://www.goodreads.com"}, {label: "Google Books",url:"https://books.google.com"
+}, {label:"ManyBooks",url:"https://manybooks.net"}, {label:"BookRix",
+url: "https://www.bookrix.com"}] }, 
+                 
+                
+{title: "Parenting",
+siteArray: [{label:"Hibunda",url: "https://www.hibunda.com"}, {label: "cafemom",url:"https://www.cafemom.com"},{label:"bundoo",url: "https://www.bundoo.com"},{label:"nameberry",
+url:"https://nameberry.com"}, {label: "babycenter",url: "https://www.babycenter.com"} ] }, 
+                        
+                
+{title:"Shopping",
+siteArray: [{label:"Amazon",url:"https://www.amazon.com"}, {label: "Jumia",url: "https://www.jumia.com.ng"}, {label:"Aliexpress",url: "https://m.aliexpress.com"}, {label: "Lazada",url: "https://www.lazada.co.id"}, {label:"Tokopedia",url:"https://www.tokopedia.co.id"}, {label: "Bukalapak",url:"https://bukalapak.com"}, {label:"Shopee",url:"https://Shopee.co.id"}, {label:"Jd.id",url: "https://www.jd.id"}, {label: "Sociolla",url: "https://www.sociolla.com"}, {label:"Enter komputer", url:"https://www.enterkomputer.com"}, {label:"Elevenia",url:"https://Elevenia.co.id"}, {label:"Tokoladang",url: "https://Tokoladang.co.id"} ] }, 
+
+
+{title:"Food",
+siteArray: [{label:"Food Network",
+url:"https://www.foodnetwork.com"}, {
+label:"Allrecipes",url:"https://www.allrecipes.com"}, {label: "Delish",
+url: "https://www.delish.com"}, {
+label:"Marmiton",url:"https://www.marmiton.org"}, {label:"BBC Good Food",url: "https://www.bbcgoodfood.com"}, {label:"Cookpad",url:"https://cookpad.com"} ] }, 
+
+
+{title: "Fashion",
+siteArray: [ {label:"Cosmo politan",
+url:"https://www.cosmopolitan.com"}, {label: "Pull&Bear",url: "https://www.pullandbear.com"}, {label: "Elle",url: "https://www.elle.com"}, {label:"Vogue",url:"http://www.vogue.com"}, {label: "Gucci",url: "https://www.gucci.com"}, {label: "Dior",url: "https://www.dior.com"}, {label: "Hermes",url:"https://www.hermes.com"
+}, {label:"Louis Vuitton",url: "https://www.louisvuitton.com"}, {label:"Marie Claire",url:"https://www.marieclaire.com"} ] }, 
+
+
+{title: "Sports",
+siteArray: [{label: "LiveScore",
+url: "https://www.livescore.com"}, {
+label:"ESPN",url:"https://www.espn.com"}, {label:"Goal",url:"https://www.goal.com"}, {label:"Cricbuzz",
+url:"https://www.cricbuzz.com"} ] },
+                
+                
+                            
+] }; },
+methods:{openSite:function(url)
+{window.open(url);} } });
+        
+</script>
+</html>
