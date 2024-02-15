@@ -1,0 +1,377 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Simple PWA</title>
+	<link rel="canonical" href="https://simplepwa.com" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icons and Colors -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="./favicon.ico">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="./mstile-144x144.png">
+	<meta name="msapplication-config" content="./browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+	
+	<!-- SEO and Social Sharing and SEO -->
+	<meta name="description" content="Simple Progressive Web App (PWA) template" />
+	<meta name="robots" content="noodp" />
+	<meta name="author" content="Nicole Furlan">
+	<meta name="keywords" content="progressive web app, progressive web application, pwa, pwa progressive web app, pwa progressive web application, progressive app, basic progressive web app, basic progressive web application, basic pwa, example progressive web app, example progressive web application, example pwa, progressive web app basic, progressive web app builder, progressive web app example, progressive web app sample, progressive web app template, sample progressive web app, sample progressive web application, sample pwa, free progressive web application template, progressive web application template, progressive web app template free, progressive web app template free download, progressive web app html template, progressive web app template github" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Simple PWA" />
+	<meta property="og:description" content="Simple Progressive Web App (PWA) template" />
+	<meta property="og:url" content="https://simplepwa.com" />
+	<meta property="og:site_name" content="Simple PWA" />
+	<meta property="section:publisher" content="https://www.facebook.com/simplepwa/" />
+	<meta property="og:image" content="https://simplepwa.com/share.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Simple PWA" />
+	<meta name="twitter:description" content="Simple Progressive Web App (PWA) template" />
+	<meta name="twitter:site" content="@simplepwa" />
+	<meta name="twitter:image" content="https://simplepwa.com/share.jpg" />
+	<meta name="twitter:creator" content="@nicolemfurlan" />
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css">
+		
+<style>/* Header Styles */
+navi{position:fixed;bottom: 0;left: 0;z-index: 2;display: flex;justify-content: space-between;align-items: center;padding: 10px 10px; background:#171717;color:#fff;
+border:2px solid #FFOOe0;padding:0; width:100%;margin:0;text-align:center;}
+
+.navimg {display: flex; color:white;
+font-size: 24px;font-weight: bold;align-items: center;padding:10px;}
+
+.navimg c{color:#C8E6C9;font-size: 24px;font-weight: bold;}
+
+.scroll{overflow-x: auto;white-space: nowrap;}
+
+.scroll a {background-color:none;
+display: inline-block;color:#fff;text-align: center;padding: 14px; border-radius:10px;text-decoration: none;}
+
+.scroll a:hover {background-color:none;border-radius:10px;}
+</style>
+
+	<!-- Javscript -->
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
+			});
+		}
+	</script>
+	<script defer src="./main.js"></script>
+ </head>
+
+ <body>
+	<navi>
+  <div class="navimg">ma<c>in.</c>
+  </div>
+  <div class="scroll">
+  	<a href="index.html">Beranda</a>
+  <a href="content.html">Konten</a>
+  <a href="video.html">Video</a>
+  <a href="page.html">page</a>
+    <a href="about.html">About</a>
+    <a href="#">Menu 2</a>
+    <a href="#">Menu 3</a>
+    <a href="#">Menu 4</a>
+    <a href="#">Menu 5</a>
+    
+  </div>
+</navi>
+	
+	
+
+
+	<section>
+		<div class="container">
+			<h2 id="what">What is this?</h2>
+			<p>
+			<p>Simple PWA is "offline-first", using a <a href="https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker#cache_then_network" target="_blank" rel="noopener">"cache first"</a> caching strategy,  <a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js#L1" target="_blank" rel="nofollow noopener"><code>cacheName</code></a> in <a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js" target="_blank" rel="nofollow noopener"><code>sw.js</code></a>.</p>
+
+				
+			
+<div class="grid">
+	
+	<ul class="tgrid">
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-36x36.png" target="_blank" rel="nofollow noopener"><code>android-chrome-36x36.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 0.75 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-48x48.png" target="_blank" rel="nofollow noopener"><code>android-chrome-48x48.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 1.0 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-72x72.png" target="_blank" rel="nofollow noopener"><code>android-chrome-72x72.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 1.5 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-96x96.png" target="_blank" rel="nofollow noopener"><code>android-chrome-96x96.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 2.0 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-144x144.png" target="_blank" rel="nofollow noopener"><code>android-chrome-144x144.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 3.0 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-192x192.png" target="_blank" rel="nofollow noopener"><code>android-chrome-192x192.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 4.0 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-256x256.png" target="_blank" rel="nofollow noopener"><code>android-chrome-256x256.png</code></a> <code class="image">image</code> Favicon, Android Chrome M47+ Splash screen with 1.5 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-384x384.png" target="_blank" rel="nofollow noopener"><code>android-chrome-384x384.png</code></a> <code class="image">image</code> Favicon, Android Chrome M47+ Splash screen with 3.0 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-512x512.png" target="_blank" rel="nofollow noopener"><code>android-chrome-512x512.png</code></a> <code class="image">image</code> Favicon, Android Chrome M47+ Splash screen with 4.0 screen density
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon.png</code></a> <code class="image">image</code> Favicon, Apple default
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-57x57.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-57x57.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, non-Retina with iOS6 or prior
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-60x60.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-60x60.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, non-Retina with iOS7
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-72x72.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-72x72.png</code></a> <code class="image">image</code> Favicon, Apple iPad, non-Retina with iOS6 or prior
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-76x76.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-76x76.png</code></a> <code class="image">image</code> Favicon, Apple iPad, non-Retina with iOS7
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-114x114.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-114x114.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, Retina with iOS6 or prior
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-120x120.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-120x120.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, Retina with iOS7
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-144x144.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-144x144.png</code></a> <code class="image">image</code> Favicon, Apple iPad, Retina with iOS6 or prior
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-152x152.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-152x152.png</code></a> <code class="image">image</code> Favicon, Apple iPad, Retina with iOS7
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-180x180.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-180x180.png</code></a> <code class="image">image</code> Favicon, Apple iPhone 6 Plus with iOS8
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/browserconfig.xml" target="_blank" rel="nofollow noopener"><code>browser config.xml</code></a> IE11 icon configuration file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon_config.json" target="_blank" rel="nofollow noopener"><code>favicon_config.json</code></a> <a href="#how" >RealFaviconGenerator</a> configuration file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.ico" target="_blank" rel="nofollow noopener"><code>favicon.ico</code></a> <code class="image">image</code> Favicon, IE and fallback for other browsers
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a> <code class="image">image</code> Favicon generation source image
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon-16x16.png" target="_blank" rel="nofollow noopener"><code>favicon-16x16.png</code></a> <code class="image">image</code> Favicon, default
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon-32x32.png" target="_blank" rel="nofollow noopener"><code>favicon-32x32.png</code></a> <code class="image">image</code> Favicon, Safari on Mac OS
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/index.html" target="_blank" rel="nofollow noopener"><code>index.html</code></a> Main HTML file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/logo.png" target="_blank" rel="nofollow noopener"><code>logo.png</code></a> <code class="image">image</code> Logo
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/main.js" target="_blank" rel="nofollow noopener"><code>main.js</code></a> Main Javascript file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/manifest.json" target="_blank" rel="nofollow noopener"><code>manifest.json</code></a> <a href="https://web.dev/add-manifest/" target="_blank" rel="noopener">Manifest file</a>
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/maskable_icon.png" target="_blank" rel="nofollow noopener"><code>maskable _icon.png</code></a> <code class="image">image</code> Favicon, <a href="https://web.dev/maskable-icon" target="_blank" rel="noopener">maskable</a>
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-70x70.png" target="_blank" rel="nofollow noopener"><code>mstile-70x70.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-144x144.png" target="_blank" rel="nofollow noopener"><code>mstile-144x144.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE10
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-150x150.png" target="_blank" rel="nofollow noopener"><code>mstile-150x150.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-310x150.png" target="_blank" rel="nofollow noopener"><code>mstile-310x150.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-310x310.png" target="_blank" rel="nofollow noopener"><code>mstile-310x310.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/README.md" target="_blank" rel="nofollow noopener"><code>README.md</code></a> Readme file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/robots.txt" target="_blank" rel="nofollow noopener"><code>robots.txt</code></a> Robots file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/safari-pinned-tab.svg" target="_blank" rel="nofollow noopener"><code>safari-pinned-tab.svg</code></a> <code class="image">image</code> Favicon, Safari pinned tab
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/sitemap.xml" target="_blank" rel="nofollow noopener"><code>sitemap.xml</code></a> Sitemap file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/share.jpg" target="_blank" rel="nofollow noopener"><code>share.jpg</code></a> <code class="image">image</code> Social media sharing
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js" target="_blank" rel="nofollow noopener"><code>sw.js</code></a> Service worker file
+				</li>
+				<li>
+					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/style.css" target="_blank" rel="nofollow noopener"><code>style.css</code></a> Main CSS file
+				</li>
+			</ul> </div>
+			
+			
+			
+			<h2 class="how">How do I use it?</h2>
+			<ol>
+				<li>Clone the repository from <a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="noopener">GitHub</a>.</li>
+				<li>Create all favicon images using <a href="https://realfavicongenerator.net" target="_blank" rel="noopener">RealFaviconGenerator</a> and replace existing images with generated images.
+					<p>If you're able to install the CLI version of <strong>RealFaviconGenerator</strong>, <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon_config.json" target="_blank" rel="nofollow noopener"><code>favicon_config.json</code></a> contains all settings to generate these images using the following command from the project's root directory. The <code>real-favicon</code> tool generates images from <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a>, so replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a> prior to running this command. The resulting <code>favicon_data.json</code> and <code>site.webmanifest</code> can be discarded.</p>
+					<p><code>real-favicon generate favicon_config.json favicon_data.json .</code></p>
+				</li>
+				<li>Create new 650x650 maskable icon using <a href="https://maskable.app" target="_blank" rel="noopener">Maskable.app</a> and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/maskable_icon.png" target="_blank" rel="nofollow noopener"><code>maskable_icon.png</code></a>.</li>
+				<li>Create new black vector icon using <a href="http://manytools.org/image/colorize-filter" target="_blank" rel="noopener">Manytools' colorize images tool</a> and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/safari-pinned-tab.svg" target="_blank" rel="nofollow noopener"><code>safari-pinned-tab.svg</code></a>.</li>
+				<li>Create new 1200x630 share image and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/share.jpg" target="_blank" rel="nofollow noopener"><code>share.jpg</code></a>.</li>
+				<li>Build upon the PWA by adding HTML, CSS, and Javascript.</li>
+			</ol>
+			<h2 class="more">Where can I find other PWAs?</h2>
+			<p>Looking for inspiration? Check out these PWA directories:</p>
+		
+				
+<div class="gridm"> <ul>
+				<li class="none"><a href="https://pwainside.com/" target="_blank" rel="noopener nofollow">PWA Inside</a></li>
+				<li class="none"><a href="https://appsco.pe/" target="_blank" rel="noopener nofollow">Appscope</a></li>
+				<li class="none"><a href="https://progressiveapp.store/" target="_blank" rel="noopener nofollow">Progressive App Store</a></li>
+				<li class="none"><a href="https://pwa-directory.appspot.com/" target="_blank" rel="noopener nofollow">PWA Directory</a></li>
+			</ul> </div>
+			
+			
+			<h2 class="help">Can I contribute?</h2>
+			<p>Want to help improve this? Contributions are welcome! <span class="icon arrow" role="img" aria-label="Arrow">&#x27A1;&#xFE0F;</span>&nbsp;<a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="nofollow noopener">GitHub</a></p>
+		</div>
+	</section>
+	
+	
+<nav class="tnavbar">
+      <a href="#" class="navbar__button">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.45307 11.751L11.9773 2.02175L21.5015 11.751C21.7906 12.0463 21.9545 12.4468 21.9545 12.8711V20.4556C21.9545 20.7747 21.7037 21 21.4427 21H15.964C15.713 21 15.4721 20.7849 15.4721 20.476V15.8886C15.4721 13.9497 13.9267 12.34 11.9773 12.34C10.0279 12.34 8.48244 13.9497 8.48244 15.8886V20.476C8.48244 20.7849 8.24157 21 7.99053 21H2.51187C2.25085 21 2 20.7747 2 20.4556V12.8711C2 12.4468 2.16397 12.0463 2.45307 11.751Z"
+            stroke="var(--text-dark)"
+            stroke-width="2"
+          />
+        </svg>
+      </a>
+      <a href="#" class="navbar__button">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M21.669 21.6543C21.8625 21.4622 21.863 21.1494 21.6703 20.9566L17.3049 16.5913C18.7912 14.9327 19.7017 12.7525 19.7017 10.3508C19.7017 5.18819 15.5135 1 10.3508 1C5.18819 1 1 5.18819 1 10.3508C1 15.5135 5.18819 19.7017 10.3508 19.7017C12.7624 19.7017 14.9475 18.7813 16.606 17.2852L20.9739 21.653C21.1657 21.8449 21.4765 21.8454 21.669 21.6543ZM1.9843 10.3508C1.9843 5.7394 5.7394 1.9843 10.3508 1.9843C14.9623 1.9843 18.7174 5.7394 18.7174 10.3508C18.7174 14.9623 14.9623 18.7174 10.3508 18.7174C5.7394 18.7174 1.9843 14.9623 1.9843 10.3508Z"
+            fill="var(--text-dark)"
+            stroke="var(--text-dark)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+      <a href="#" class="navbar__button">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18 2.8H7C5.23269 2.8 3.8 4.23269 3.8 6V17C3.8 18.7673 5.23269 20.2 7 20.2H18C19.7673 20.2 21.2 18.7673 21.2 17V6C21.2 4.23269 19.7673 2.8 18 2.8ZM7 1C4.23858 1 2 3.23858 2 6V17C2 19.7614 4.23858 22 7 22H18C20.7614 22 23 19.7614 23 17V6C23 3.23858 20.7614 1 18 1H7Z"
+            fill="var(--text-dark)"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M22 7.99995H3V6.19995H22V7.99995Z"
+            fill="var(--text-dark)"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M10 6.99989L6 1.99989L7.57349 1.12573L11.5735 6.12573L10 6.99989Z"
+            fill="var(--text-dark)"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.5 6.99989L12.5 1.99989L14.0735 1.12573L18.0735 6.12573L16.5 6.99989Z"
+            fill="var(--text-dark)"
+          />
+          <path
+            d="M15.75 13.0671C16.0833 13.2595 16.0833 13.7407 15.75 13.9331L10.5 16.9642C10.1667 17.1566 9.75 16.9161 9.75 16.5312L9.75 10.469C9.75 10.0841 10.1667 9.84354 10.5 10.036L15.75 13.0671Z"
+            fill="var(--text-dark)"
+          />
+        </svg>
+      </a>
+      <a href="#" class="navbar__button">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17.6007 7.94185H6.47927C5.84559 7.94185 5.32113 8.43455 5.2816 9.06699L4.80842 16.638C4.6573 19.0559 6.57759 21.0999 9.00024 21.0999H15.0797C17.5023 21.0999 19.4226 19.0559 19.2715 16.638L18.7983 9.06699C18.7588 8.43455 18.2343 7.94185 17.6007 7.94185ZM6.47927 6.14185C4.89508 6.14185 3.58393 7.37361 3.48511 8.95471L3.01192 16.5257C2.79604 19.9799 5.53931 22.9 9.00024 22.9H15.0797C18.5406 22.9 21.2839 19.9799 21.068 16.5257L20.5948 8.95471C20.496 7.37361 19.1849 6.14185 17.6007 6.14185H6.47927Z"
+            fill="var(--text-dark)"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12.2761 2.8C11.0812 2.8 10.1125 3.76867 10.1125 4.96359V6.1419H8.3125V4.96359C8.3125 2.77456 10.0871 1 12.2761 1C14.4651 1 16.2397 2.77456 16.2397 4.96359V6.1419H14.4397V4.96359C14.4397 3.76867 13.471 2.8 12.2761 2.8Z"
+            fill="var(--text-dark)"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12.2757 12.3118C13.4706 12.3118 14.4393 11.3431 14.4393 10.1482L14.4393 9.91256C14.4393 9.41551 14.8422 9.01256 15.3393 9.01256C15.8363 9.01256 16.2393 9.41551 16.2393 9.91256L16.2393 10.1482C16.2393 12.3373 14.4647 14.1118 12.2757 14.1118C10.0866 14.1118 8.31208 12.3373 8.31208 10.1482L8.31208 9.91257C8.31208 9.41551 8.71502 9.01257 9.21208 9.01257C9.70913 9.01257 10.1121 9.41551 10.1121 9.91257L10.1121 10.1482C10.1121 11.3431 11.0807 12.3118 12.2757 12.3118Z"
+            fill="var(--text-dark)"
+          />
+        </svg>
+      </a>
+      
+    </nav>
+	<footer>
+		<div class="container">
+			<p>If you find this useful, please share it, and if you can, support me directly on <a href="https://patreon.com/nicolefurlan" target="_blank" rel="noopener nofollow">Patreon</a> or <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FACW2AMWGLZ6S&source=url" target="_blank" rel="noopener nofollow">Paypal</a>. Your support is greatly appreciated!&nbsp;<span class="icon heart" role="img" aria-label="Heart">&#x2764;</span></p>
+		</div>
+	</footer>
+
+ </body>
+
+ </html>
