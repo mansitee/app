@@ -1,4 +1,4 @@
-{
+  {
   "name": "Simple PWA",
   "short_name": "Simple PWA",
   "display": "standalone",
@@ -59,12 +59,18 @@
       "purpose": "maskable"
     }
   ],
-  "description": "Simple pwa",
+  "description": "Simple pwa sedang dalam perjalanan menuju kesuksesan",
   "lang": "id",
   "orientation": "portrait",
   "categories": [
+    "books",
+    "entertainment",
     "food",
-    "news"
+    "lifestyle",
+    "music",
+    "news",
+    "personalization",
+    "utilities"
   ],
   "share_target": {
     "method": "GET",
@@ -74,6 +80,11 @@
       "text": "Pintasa",
       "url": "https://mansitee.github.io"
     }
-  }
+  },
+  "display_override": [
+    "standalone",
+    "window-controls-overlay",
+    "browser"
+  ],
+  "prefer_related_applications": true
 }
- 
