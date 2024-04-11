@@ -1,0 +1,1260 @@
+
+<!doctype html>
+<html>
+<head>
+
+  <meta charset="utf-8"> <title>MANsitee</title>
+	<link rel="canonical" href="https://mansitee.github.io" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="yes" name="mobile-web-app-capable">
+  <meta content="#000" name="theme-color">
+  <meta content="#000" name="msapplication-TileColor">
+  <meta content="#000" name="apple-mobile-web-app-status-bar-style">
+  <meta content="mansitee.github.io, mansitee, manten, proyek, cantik, keren, banget" name="apple-mobile-web-app-title">
+  	 
+    <link rel="stylesheet" href="style.css">
+    
+    <style>/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+    background: #F1F4F9;
+}
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header Styles */
+header {background: #F1F4F9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:5px 5px;
+  
+   top: 0; tpadding: 14px 12px 13px 12px;
+  left: 0; 
+  right: 0;
+  tbbox-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); border-radius: 5px;
+  z-index: 9999;
+ position:fixed;
+  
+}
+
+.logo {display: flex; color:#4CAF50;
+  font-size: 24px;
+  font-weight: bold;
+}
+ 
+
+.logo c{color:#000;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.scrollmenu {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.scrollmenu a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.scrollmenu a:hover {border-radius:10px;
+  background-color: #C8E6C9;
+}
+ 
+/* Main Styles */
+main {background-color: #F1F4F9;
+    tmargin:10px;}
+ 
+main .main-container {
+  background-color: #F1F4F9;
+  padding:2px;margin:5px;
+} 
+ 
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+/* Footer Styles */
+footer {
+    tbackground-color: #C8E6C9;
+    color: #A5D6A7;
+    padding: 10px;
+    text-align: center;
+}
+
+ 
+
+
+.post {
+  margin-top:10px; border-radius:10px;
+  background-color: #fff;background: linear-gradient(to bottom, #ffffff, #C8E6C9); 
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.post-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+   border-radius:10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.post-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.post-content {
+  padding: 10px;
+}
+
+.post-content p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.post-content video {width:100%;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+.post-content img {width:100%;
+  max-width: 100%;
+  margin: 10px 0;
+} 
+ 
+
+.post-content li{cursor:s-resize;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;height:inherit;flex-wrap: wrap;overflow-y:auto;border-bottom:2px dashed #E8F5E9;}  
+ 
+.post-actions {padding:10px;background-color:#fff;background-image:url(bg2.png);background-size:100% 100%;color:#fff;text-align:center
+}  
+
+.post-actions ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-actions li {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+.post-actions li a {
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.post-actions li a:hover {
+  color:#4CAF50;
+}
+
+
+
+.tabs-fixed, .tabs-sticky, .tabs-static{
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #F1F4F9;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.tabs-fixed{ position:fixed;}
+.tabs-sticky{ position: sticky;}
+.tabs-sticky{ position: static;}
+
+.top{top:0;}
+.bottom{bottom:0;}  	
+
+.tabs {display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  
+}
+
+.tab {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab.active {
+  color: #3b5998;
+  border-bottom: 3px solid #3b5998;
+}
+
+
+.tab.home {padding: 10px;
+  font-size: 20px; margin:20px 30px 20px 1px; text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: #3b5998;
+  
+}
+
+.tab-content {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+} 
+
+
+
+
+#grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 1rem;
+}
+
+.item {
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   overflow: hidden;
+   box-shadow: 2px 2px 5px rgba(0,0,0,.1);
+}
+ 
+.item img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+.fb-stories {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 10px;
+}
+
+.fb-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.fb-story-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.fb-story-name {
+  font-size: 12px;
+  text-align: center;
+}
+
+
+
+
+.scrollmenu2 {background-color:#f2f2f2;
+    background-image: url("bg2.png");
+    background-size: 100% 100%;
+    color: white;
+    text-align: center;width:358px;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+   grid-gap: 1rem;
+  gap: 10px;
+  padding: 10px;
+  margin:10px;
+}
+
+.grid-item {
+  tbackground-color: #C8E6C9;
+  border-radius:10%; 
+  text-align: center;
+  padding: 10px; 
+}
+   
+
+.grid-item a {background-color: #C8E6C9;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+  tbox-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); border-radius:10px;
+  padding: 10px;
+}
+
+.grid-item:hover {
+  tbackground-color: #ddd;}
+
+
+
+
+
+.scrollmenu3{
+  top: 0; tpadding: 14px 12px 13px 12px;
+  left: 0; margin-top:10px;
+  right: 0;
+  background-color: #f2f2f2;
+  tbbox-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); border-radius: 5px;
+  z-index: 9999;
+ position: sticky;}
+
+.scrollmenu3 {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+  
+.scrollmenu3 a {width: 100px;
+   height:20px;
+  border-radius:10px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+
+.scrollmenu3 button {
+  border-radius:10px;
+  tmargin-bottom: 5px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  background-color:none;
+}
+
+
+.scrollmenu3 a hijau{color:#4CAF50;
+  font-size: 24px;
+  font-weight: bold;
+}
+.scrollmenu3 a:hover {
+  background-color: #ddd;
+}
+
+ 
+
+.column{column-count: 2;
+  column-gap:0.3em;
+  padding:0;}
+
+.column ul{padding:2px;list-style: none;}
+
+.posting {
+  margin-top:10px; border-radius:10px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+/* Bottom Sheet Styles */
+.bottom-sheet {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100vw;
+  height: 60vh;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.bottom-sheet.active {
+  bottom: 0;
+}
+
+/* Toggle Button Styles */
+.bottom-sheet-toggle {
+  display: block;
+  margin: 2px auto;
+  tpadding: 10px 20px;
+  color: #fff;
+  background-color:white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+</style>
+</head>
+<body>
+  
+
+
+
+<section> 
+  
+  
+
+
+
+
+    <main> <div class="main-container">
+
+  
+
+<header>
+  <div class="logo">Bac<c><.</c>
+  </div>
+  <div class="scrollmenu">
+    <a href="#">Toko</a>
+    <a href="#">Video</a>
+    <a href="#">News</a>
+    <a href="#">Blog</a>
+    <a href="#">Documment</a>
+    <a href="#">Menu 6</a>
+    <a href="#">Menu 7</a>
+    <a href="#">Menu 8</a>
+    <a href="#">Menu 9</a>
+    <a href="#">Menu 10</a>
+    <a href="#">Menu 11</a>
+    <a href="#">Menu 12</a>
+    <a href="#">Menu 13</a>
+    <a href="#">Menu 14</a>
+    <a href="#">Menu 15</a>
+    <a href="#">Menu 16</a>
+    <a href="#">Menu 17</a>
+    <a href="#">Menu 18</a>
+    <a href="#">Menu 19</a>
+    <a href="#">Menu 20</a>
+  </div>
+</header>
+  
+  
+
+
+  
+  <div class="post">
+  <div class="post-header">
+    <img src="user.png" alt="User Profile Picture">
+    <div class="post-info">
+      <p class="post-author">John Doe</p>
+      <p class="post-time"> Tags: nama </p>
+    </div> 
+  </div>
+  <div class="post-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing el.</p>
+    
+ <div class="column">   
+ <ul>
+<li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Arwan Singgih </b>
+Anak lelaki pemberani yang selalu bersungguh</b>sungguh dalam mengerjakan tanggung jawab</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Aristide Keano</b>
+Bayi laki</b>laki yang selalu membawa kesejukan bagi semua orang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Saveri Abel Alterio</b>
+Anak lelaki yang bersinar seperti bintang, dan selalu memberikan nafas kehidupan bagi keluarganya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Reiki Savian Altezza</b>
+Anak lelaki pemberian Tuhan yang tumbuh dengan pesat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Fahlefi Jaasir Addi Tonda</b>
+Anak laki</b>laki pemberani yang baik hati, cerdas, dan rajin berdoa</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Kenzo Julian</b>
+Anak muda yang pintar dan kreatif</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Danial Arsalan Putra Syahreza</b>
+Anak lelaki yang pemberani layaknya Singa, juga sangat menyayangi keluarga</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Kin Dhananjaya</b>
+Anak lelaki yang berharga dan memiliki jiwa ksatria</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Muhammad Kevlar Putra Liandra</b>
+Anak laki</b>laki yang memiliki akhlak terpuji, selalu bekerja dengan baik dan mendapat berkah dari Tuhan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Ruri Narendra</b>
+Anak lelaki yang memiliki karakter kuat dan berharga seperti batu zamrud</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Avisha Bertoldi Adam</b>
+Anak lelaki pertama yang cerdas</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Adhitama Elvan Syahreza</b>
+Anak lelaki tampan, memiliki hati yang kuat, dan menyayangi banyak orang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+
+Ardian Adhlino Gavin</b>
+Anak lelaki yang lahir dengan sehat, memiliki kekuatan seperti burung Elang putih, juga pembawa kerukunan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Kavin Ardana Abiputra</b>
+Anak lelaki berparas tampan yang cerdas dan hidup dengan mulia</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Aksa Delvin Arion</b>
+Anak lelaki mempesona, baik dan bersih hatinya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Neandro Sabian</b>
+Anak laki</b>laki yang berasal dari surga</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Adinata Aileen Caesar</b>
+Pemimpin yang bersinar seperti cahaya yang paling terang di alam semesta</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Ansell Arian Rendra</b>
+Anak yang cerdas dan selalu mengerjakan pekerjaannya dengan sempurna</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Eros Bratadikara Nayaka</b>
+Berjiwa pemimpin, penuh cinta, dan memiliki kekuatan seperti seorang prajurit</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Abimanyu Damar Bwana</b>
+Anak lelaki yang gagah, dan selalu menjadi penerang bagi keluarganya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Alvaro Argi Naruna</b>
+Pemimpin yang bijak, menerangi jalan kebenaran untuk keselamatan umat manusia</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Aiden William Abhivandya</b>
+Anak lelaki yang tegas, dihormati banyak orang, dan melindungi orang lain dengan berani</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Nishad Jazztin Anederea</b>
+Anak lelaki yang memiliki keindahan seperti musik jazz</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Galen Ray Surendra</b>
+Anak lelaki berparas elok, berhati lembut, dan agung seperti seorang raja</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+
+Abel Lintang Arifin</b>
+Anak lelaki yang bijak, menjadi penerang dalam kehidupan orang lain</li>
+	
+	
+
+
+
+
+
+
+ <input id="ktor"role="ktor" type="button"value="200"><b>Nama </b><r>Bayi</r><p> Perempuan & Laki-Laki dari Bahasa Sunda</p></t2>   <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Euis </b> Yang berarti cantik
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);">  <b>Esih </b> Yang berarti pengasih
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Eros </b> Yang berarti bunga mawar
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Enong </b> Yang berarti tersa</b> Yang
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ening </b> Yang berarti gadis
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Engkom </b> Yang berarti bulan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Endah </b> Yang berarti indah
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Enang </b> Yang berarti gadis
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Enah </b> Yang berarti surga
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Elas </b> Yang berarti kasih sa</b> Yang
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ela </b> Yang berarti cahaya malam
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Eksha </b> Yang berarti kemurnian
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ekasari </b> Yang berarti pertama atau inti
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ekanta </b> Yang berarti gadis </b> Yang tekun
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ekani </b> Yang berarti satu
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ella </b> Yang berarti bumi atau mengalir
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Diah </b> Yang berarti cantik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dhira </b> Yang berarti kebijakan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dhatri </b> Yang berarti pengharapan tertinggi
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dhara </b> Yang berarti bumi atau mengalir
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Deya </b> Yang berarti berkepribadian menyenangkan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dewi </b> Yang berarti dewa perempuan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dewayani </b> Yang berarti kedamaian
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Depi </b> Yang berarti nama dewi
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Darmastuti </b> Yang berarti wanita </b> Yang penuh pengabdian
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Danakitri </b> Yang berarti kemasyhuran
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Denok </b> Yang berarti cantik
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dedeh </b> Yang berarti </b> Yang tersa</b> Yang
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dayita </b> Yang berarti kekasih
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Damini </b> Yang berarti kilat
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dahayu </b> Yang berarti cantik
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Isnaini </b> Yang berarti lahir pada hari Senin
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ishana </b> Yang berarti kaya
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Irma </b> Yang berarti irama
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ira </b> Yang berarti pandai
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Inu </b> Yang berarti atraktif
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Inka </b> Yang berarti bumi </b> Yang kecil
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Indrina </b> Yang berarti dalam
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Indria </b> Yang berarti mempunyai rasa adil
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Imas </b> Yang berarti putri bangsawan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Lin </b> Yang berarti cahaya
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Idah </b> Yang berarti bahagia
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ida </b> Yang berarti baik
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Icih </b> Yang berarti kasih
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Hidayati </b> Yang berarti hidayah
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Hesti </b> Yang berarti perempuan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Halimun </b> Yang berarti kabut
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gina </b> Yang berarti berbuat kebaikan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Galuh </b> Yang berarti permata
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Kusumaputri </b> Yang berarti wanita secantik bunga
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Kusumaningrum </b> Yang berarti seharum bunga
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Kumari </b> Yang berarti feminin
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Konita </b> Yang berarti cantik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Kencana </b> Yang berarti emas
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Kembang </b> Yang berarti bunga
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Kartika </b> Yang berarti bulan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Karta </b> Yang berarti aman
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Karomah </b> Yang berarti keistimewaan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Kaniawati </b> Yang berarti wanita cantik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Kania </b> Yang berarti kecantikan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Jyotika </b> Yang berarti cahaya
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Jennitra </b> Yang berarti berderajat tinggi
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Jayashree </b> Yang berarti berkah Tuhan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Jayanti </b> Yang berarti perasaan pada keadilan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Iyah </b> Yang berarti bahagia
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Itoh </b> Yang berarti perempuan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Iteung </b> Yang berarti hitam manis
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ita </b> Yang berarti feminin
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lisung </b> Yang berarti kuat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lisa </b> Yang berarti perempuan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lini </b> Yang berarti kuat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lindeuk </b> Yang berarti baik hati
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Lilis </b> Yang berarti wanita
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lilian </b> Yang berarti bunga lili
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lilakanti </b> Yang berarti lama dan abadi
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lila </b> Yang berarti senang olahraga
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Leutik </b> Yang berarti mungil
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lawani </b> Yang berarti keanggunan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Lata </b> Yang berarti petir
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Laskmi </b> Yang berarti pertanda dari Tuhan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Langki </b> Yang berarti istimewa
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Langit </b> Yang berarti langit
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Langgam </b> Yang berarti lagu
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Lalitha </b> Yang berarti ceria
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Natya </b> Yang berarti abadi
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Nareswari </b> Yang berarti permaisuri
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Naray </b> Yang berarti harapan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Naisha </b> Yang berarti spesial
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Nadiya </b> Yang berarti sungai
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Naditya </b> Yang berarti matahari
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Mudita </b> Yang berarti senang
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Mira </b> Yang berarti lautan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Mina </b> Yang berarti ikan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Mimin </b> Yang berarti perempuan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Mila </b> Yang berarti gadis
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Midayati </b> Yang berarti senang
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Meghana </b> Yang berarti awan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Mukti </b> Yang berarti kebebasan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Marini </b> Yang berarti manis
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Malati </b> Yang berarti bunga melati
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Cingceng </b> Yang berarti gesit dan cekatan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Celak </b> Yang berarti memakai tanda mata
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Cecep </b> Yang berarti tampan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Ceceng </b> Yang berarti tampan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Cece </b> Yang berarti anak laki-laki
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Caringin </b> Yang berarti kuat seperti beringin
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Etang </b> Yang berarti pandai berhitung
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Enu </b> Yang berarti pertama
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Entang </b> Yang berarti juragan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Enjang </b> Yang berarti anak laki-laki
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Engkus </b> Yang berarti harum
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Engkos </b> Yang berarti harum
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Engke </b> Yang berarti menanti
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Enggal </b> Yang berarti cepat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Endeur </b> Yang berarti bergetar hatinya oleh kebaikan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Endeung </b> Yang berarti hitam
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Encep </b> Yang berarti tampan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Eman </b> Yang berarti mulia
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Elan </b> Yang berarti kesa</b> Yangan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Eep </b> Yang berarti tampan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Edi </b> Yang berarti elok
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Eces </b> Yang berarti jelas
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ece </b> Yang berarti tampan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Eba </b> Yang berarti </b> Yang pertama
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Duriat </b> Yang berarti penuh cinta</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Durahman </b> Yang berarti pengasih
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Dunungan </b> Yang berarti meletakkan dengan tepat
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Dulur </b> Yang berarti saudara
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dudung </b> Yang berarti kesuburan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dudun </b> Yang berarti kuat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Dudu </b> Yang berarti </b> Yang baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Dodo </b> Yang berarti kuat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Doddy </b> Yang berarti baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Djaka </b> Yang berarti bujangan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Didin </b> Yang berarti agama
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Didi </b> Yang berarti baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Dian </b> Yang berarti cahaya
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Herang </b> Yang berarti jernih
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Hendri </b> Yang berarti bijaksana
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Haur </b> Yang berarti bambu
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Harti </b> Yang berarti arti kehidupan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Harja </b> Yang berarti ramai
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Harisdarma </b> Yang berarti nama Raja Galuh
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Hareup </b> Yang berarti berada di depan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Haneut </b> Yang berarti hangat hati
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Hamdan </b> Yang berarti terpuji
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Halis </b> Yang berarti alisnya bagus
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Heulang </b> Yang berarti burung elang
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Henhen </b> Yang berarti baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Harkat </b> Yang berarti kehormatan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Harep </b> Yang berarti penuh harapan baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Hardi </b> Yang berarti gunung
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Hampura </b> Yang berarti penuh maaf
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Hampang </b> Yang berarti ringan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Hamdalah </b> Yang berarti bersyukur
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Halimpu </b> Yang berarti suaranya bagus
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Halabab </b> Yang berarti mengatasi kehausan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Gungun </b> Yang berarti orang </b> Yang bermanfaat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Gunawan </b> Yang berarti orang </b> Yang berguna
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gumujeng </b> Yang berarti selalu tertawa bahagia
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gumilang </b> Yang berarti gemilang
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gumelar </b> Yang berarti kehormatan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gumbira </b> Yang berarti bahagia
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gugunungan </b> Yang berarti bukit-bukit
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gugun </b> Yang berarti bermanfaat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Gugum </b> Yang berarti gembira
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Geunjleung </b> Yang berarti tersiar atau terkenal
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gerimis </b> Yang berarti lahir waktu gerimis
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gerilap </b> Yang berarti gemerlap
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Genep </b> Yang berarti anak keenam
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gembira </b> Yang berarti bahagia
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Gede </b> Yang berarti besar
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gatot </b> Yang berarti </b> Yang baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Ganjar </b> Yang berarti pemberian
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gandana </b> Yang berarti harum
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Gancang </b> Yang berarti sangat cepat larinya
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Gampil </b> Yang berarti mudah
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Galur </b> Yang berarti membuka jalan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Galuh </b> Yang berarti permata
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Galing </b> Yang berarti rambutnya ikal
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Risnandar </b> Yang berarti kebaikan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Repe </b> Yang berarti hening atau tenang
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Rengku </b> Yang berarti penuh hormat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Rawaya </b> Yang berarti jembatan perantara
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Raray </b> Yang berarti muka atau </b> Yang bagus
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Raraosan </b> Yang berarti penuh perasaan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Rampa </b> Yang berarti bersama-sama
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Rama </b> Yang berarti melindungi
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Raket </b> Yang berarti orang dekat
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Raka </b> Yang berarti kakak
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Rahmat </b> Yang berarti karunia Tuhan
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Ragasuci </b> Yang berarti berbadan suci
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Ragaji </b> Yang berarti tajam pikirannya
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Rada </b> Yang berarti lebih
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Putra </b> Yang berarti anak
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Purwanegara </b> Yang berarti pelayan Tuhan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Purwadinata </b> Yang berarti penata </b> Yang utama
+
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+
+
+ <b>Purun </b> Yang berarti jadi atau sesuatu </b> Yang baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> 
+ <b>Purnawarman </b> Yang berarti raja Tarumanegara </li>
+ 	
+ 
+ 
+ <li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad A</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aksa              </b> :Orang yang selalu jernih air mukanya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Arion            </b> :Mempesona, memikat hati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Arvin             </b> :Teman yang baik bagi semua orang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aliando         </b> :Mulia dan bahagia</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Alec                 </b> :Pelindung umat manusia</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Axelle            </b> : Pembawa kedamaian</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Azada            </b> :Kebebasan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Adhitama     </b> :Tampan dan indah</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Azura             </b> :Biru langit</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Abhimanyu </b> :Anak dari Arjuna</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Abayomi       </b> :Anak yang lahir membawa kebahagiaan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Azri                 </b> :Cerdas</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Alvaro            </b> :Bijaksana </li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Arkana           </b> :Berhati terang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Arrayan          </b> :Pohon yang berbau harum</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Andhra          </b> :Kuat dan berani</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aydin              </b> :Keteguhan dan kebijaksanaan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Abrisam        </b> :Tampan dan lembut</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Achazia          </b> :Raja</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Abinaya          </b> :Semangat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Abbas              </b> :Singa, pemimpin
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Abizar             </b> :tambang emas, yang menyebarkan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Abqary           </b> :jenius, pintar, cerdas</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Abraham       </b> :pembawa pesan dari Tuhan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Adnan            </b> :penenang hati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Afif                  </b> :punya harga diri</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aidan             </b> :pohon palem yang tinggi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Alvan             </b> :agung</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Alzam             </b> :tekun</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ameer            </b> :penguasa atau pemimpin</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Amaar            </b> :menjadi makmur, pembangun</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aqila                 </b> :Bijaksana, pandai</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Asad                   </b> :senang, berbahagia, beruntung, singa</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Atalaric               </b> :harum</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Atha                  </b> :pemberian</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Attar                </b> :murni, suci, bersih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aulian             </b> :pemimpin, semangat, malaikat, teman</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Azam               </b> :agung, terhebat, paling penting, rajin, tekun</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Azhar               </b> :bercahaya, lebih cerah, yang berseri, yang gemilang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aziz                  </b> :yang mulia, yang kuat, kekasih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Aarush             </b> :matahari</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Advik               </b> :unik</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Austin              </b> :yang hebat</li>
+	
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad B</li> 
+
+<li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bahr          </b> :laut, lautan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bahran     </b> :bercahaya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bahi           </b> :indah, yang sempurna
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Bahy          </b> :yang tampan dan elok matanya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Baihaqi     </b> :imam perawi hadist</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Baim          </b> :penguasa yang baik</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bais            </b> :tentara</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bakhtiar   </b> :yang bahagia</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Banan        </b> :ujung jari</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bani            </b> :kaum</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Banin          </b> :bijak, gigih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Baqir           </b> :pembelah, yang berilmu</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bariq           </b> :bercahaya, kemilau
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Barra          </b> :keteguhan, berkah Tuhan, memiliki kekuasaan, bersih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Barraq        </b> :bersinar, berkilau, cemerlang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bashir         </b> :pembawa berita baik
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Basil            </b> :singa
+Basman      </b> :yang banyak tersenyum
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Behzad        </b> :jujur, perhatian</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bilal              </b> :terpilih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bin</b> :Seorang anak laki-laki</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bryan</b> :Daratan tinggi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bruno</b> :Rambut kecoklatan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Brandon</b> :Gunung yang tinggi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bradley</b> :Seorang yang pemberani</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bobby</b> :Sebuah anugerah</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bishal</b> :Kekuatan, yang memimpin</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Benny</b> :Yang dapat dipercaya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bose</b> :Yang menguasai, kecerdasan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Bentley</b> :Tanaman yang lebat, ketenangan
+</li>
+	
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad C</li> 
+
+<li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Caden          </b> :teman, kerabat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Caleb           </b> :dermawan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Carim          </b> :murah hati, dermawan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Casildo        </b> :pemuda pejuang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Cazim           </b> :penyabar</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Cemal          </b> :keindahan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chafik          </b> :bersimpati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chaker         </b> :berterima kasih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chanan        </b> :Tuhan itu Maha Pengasih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chahid        </b> :saksi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chairi          </b> :kebaikanku</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chairil        </b> :kebaikan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chan           </b> :bersinar</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Charagh     </b> :cahaya dalam gelap</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chashida   </b> :berpengalaman, terpelajar</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chawki       </b> :memberikan kenyamanan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Chinar        </b> :sebuah pohon</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chokri        </b> :diberkati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chumaidi  </b> :pujaanku</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Coman          </b> :mulia, luhur, bangsawan, ningrat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Calvin</b> :Bersinar</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Cedric</b> :Alternatif</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Cody</b> :Kecerdasan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Charles</b> :Kekuatan, pemimpin</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Cyrus</b> :Seperti matahari, bersinar</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Cameron</b> :Cerdas</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Cal</b> :Yang berharga</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Carlton</b> :Perkotaan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Chan</b> :Cahaya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Charilie</b> :Seorang yang diberkahi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Callum </b> :merpati</li>
+   
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad D</li> 	
+	
+<li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"><b>Damian  </b> Sahabat yang baik.</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Delvin     </b> Teman yang baik.</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Delana     </b> Pelindung orang yang mulia</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Devan       </b> Puisi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Dylan        </b> Anak laut</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Daanii      </b> dekat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Daarii       </b> mengetahui</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Daaris      </b> pembaca, pelajar</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Daffa         </b> banyak memiliki pertahanan diri</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Dahdy        </b> yang tercinta</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Daifullah   </b> tamu Allah</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Daim          </b> kekal abadi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Dalil           </b> penunjuk, alasan
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Daiyan       </b> hakim, pembalas
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Danesh      </b> kebijaksanaan, terpelajar
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Daniyal      </b> pintar, cerdas
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Dary            </b> pandai, bijaksana
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Dawud       </b> yang tercinta
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Dayyan      </b> penguasa yang agung dan kuat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Dhafi          </b> tamu</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Dhakiy       </b> pintar, cemerlang
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Dhia            </b> sinar, cahaya, sinaran kebenaran
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Dhiaulhaq </b> sinar cahaya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Durrani      </b> permataku
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Dzuhairi    </b> baik, cerdas, beruntung</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Darsh</b> Pemimpin</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Diyan</b> Lampu</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Dilan</b> Sebuah kebaikan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+David</b> Yang dicintai</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Dev</b> Yang dikagumi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Derek</b> Raja</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Danny</b> Berlaku adil</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Daniel</b> Yang berlaku adil</li>
+	
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad E</li> 
+
+  <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Evano   </b> Anugerah Tuhan yang paling indah</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ersya    </b> Anak yang bersemangat dan cerdas</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ezra      </b> Pertolongan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ephraim </b> Selalu berhasil dengan baik
+ </li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b> Elvano     </b> Anak yang kuat hadiah dari Tuhan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Edzard      </b> Penjaga kekayaan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ebrahim </b> pembawa pesan dari Tuhan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Efendi </b> laki-laki lembut</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ehan </b> bulan purnama</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ehsan </b> kuat, baik</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Eiham </b> fantasi</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Eijaz </b> keajaiban atau berkat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Eisa </b> Tuhan penyelamat</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Eiwa </b> pelindung</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Einas </b> ketenangan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+El Amin </b> dapat dipercaya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+El Fatih </b> pemenang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Emran </b> berkembang, sukses</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Emir </b> Pangeran yang memesona</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Esfand </b> murni, suci</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Eshaal </b> penyelesaian</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Eshan </b> dalam kasih Allah</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ettifaq </b> harmoni, kesatuan, persahabatan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Eyab </b> kembali</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ezaz </b> karunia dari Allah</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ezhar </b> bunga-bunga, yang berseri, yang gemilang, lebih cerah</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ethan </b> kuat</li>
+
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad F</li> 
+
+
+  <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Faresta  </b> Malaikat </li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fajrin     </b> Kebahagiaan, kekuatan, pengetahuah luas, dan jalan hidup yang tentram</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Farrel     </b> Manusia pemberani</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Farzan    </b> Bijaksana</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Faadhil </b> berlimpah, mulia, beruntung dan memiliki banyak kebaikan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fadgham </b> lelaki yang memesona</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Faidhan </b> lelaki yang banyak kebajikannya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Faiq </b> baik, istimewa, unggul</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fakhri </b> kemegahanku, kebanggaan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Faisal </b> pemisah antara hak dan batil, tegas</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fannan </b> seniman</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Faqih </b> ahli Fiqih, cerdas, pintar, sangat alim</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fariq </b> bisa membedakan yang baik dan yang tidak baik</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Farras </b> cerdas, banyak akal, tajam pikirannya</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fathan</b> kemenangan, cerdas, bijaksana
+</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Fatih </b> penakluk, pemimpin</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fattah </b> Penakluk</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fattan </b> yang memikat, menarik hati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fauzan </b> kemenangan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fawad </b> hati, jiwa{
+Fawwaz </b> yang selalu beruntung</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Fidai </b> pengorbanan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Firas </b> gigih, kecerdikan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Firhan </b> yang bahagia, yang senang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Frey </b> mulia</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Felix </b> bahagia dan makmur</li>
+
+	
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad G</li> 
+
+<li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>Gandhi       </b> Anak yang berilmu</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gunadhya </b> Kekayaan dalam kebaikan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gavin          </b> Elang putih</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gilang         </b> Anak yang teguh</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gafar </b> suka memaafkan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gaffi </b> berhati lembut</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghaaziy </b> pejuang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghadi </b> singa</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghaffar </b> lembut hati, sedia mengampuni</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghafif </b> pemaaf, sedia mengampuni</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghaly </b> berharga, mahal</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghanim </b> sukses, berhasil</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghauts </b> bantuan, pertolongan, uluran.</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghava </b> lembut hati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghazam </b> sayang, cinta</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghazi </b> pejuang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghazwan </b> penakluk</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghifari </b> pengampun, lembut hati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghiyats </b> bantuan yang tepat pada waktunya, hujan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghonim </b> keuntungan; kebahagiaan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghufran </b> ampunan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghyr </b> memiliki kecemburuan tinggi terhadap agama</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gibran </b> yang terpandai</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gifar </b> lembut</li> 
+
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad H</li> 
+
+ <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghazam </b> sayang, cinta</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghazi </b> pejuang</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghazwan </b> penakluk</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghifari </b> pengampun, lembut hati</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghiyats </b> bantuan yang tepat pada waktunya, hujan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghonim </b> keuntungan; kebahagiaan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghufran </b> ampunan</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Ghyr </b> memiliki kecemburuan tinggi terhadap agama</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gibran </b> yang terpandai</li> <li style="padding-top:5px;border-bottom:1px dashed rgba(13, 28,39,0.6);"> <b>
+Gifar </b> lembut</li> 
+
+<li style="padding-top:15px;border-bottom:5px dashed rgba(13, 28,39,0.6);font-size: 20px;font-weight:600;text-align:center;"> Abjad H</li>  </ul> </div>
+    	
+        
+        
+    </main>
+
+    
+    <div class="bottom-sheet">
+      <h2>Bottom Sheet</h2>
+      <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget est sed odio semper scelerisque ac quis elit. Nulla nec enim et nisi facilisis hendrerit id vel ipsum. Integer sodales risus justo, eu mollis urna ultricies vel. </p>
+    </div>   
+    
+    
+    <footer>
+        <p>Hak Cipta © 2023. Nama Perusahaan. Hak Cipta Dilindungi.</p>
+    </footer>
+<script src="bottomsheet.js"></script>
+    <script src="seo.js"></script>
+</body>
+</html>
