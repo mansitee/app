@@ -1,61 +1,54 @@
-// worker.js
+// This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('offline-cache').then(function(cache) {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/style.css',
-        '/main.js',
-        '/manifest.json',
-        '/worker.js',
-        // Tambahkan URL lain yang perlu di-cache
-      ]);
-    })
-  );
-});
+const CACHE = "pwabuilder-offline-page";
 
-self.addEventListener('activate', function(event) {
-  event.waitUntil(self.clients.claim());
-});
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
-  );
-});
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
+const offlineFallbackPage = "ToDo-replace-this-name.html";
 
-self.addEventListener('sync', function(event) {
-  if (event.tag === 'background-sync') {
-    event.waitUntil(syncData());
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
   }
 });
 
-function syncData() {
-  return fetch('https://mansitee.github.io/app/a')
-    .then(function(response) {
-      // Lakukan sesuatu dengan respons
-      console.log('Data berhasil disinkronisasi:', response);
-    })
-    .catch(function(error) {
-      // Tangani kesalahan
-      console.error('Gagal menyinkronisasi data:', error);
-    });
-}
-
-self.addEventListener('push', function(event) {
-  const title = 'Pemberitahuan';
-  const options = {
-    body: event.data.text()
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
+self.addEventListener('install', async (event) => {
+  event.waitUntil(
+    caches.open(CACHE)
+      .then((cache) => cache.add(offlineFallbackPage))
+  );
 });
 
-self.addEventListener('periodicsync', function(event) {
-  if (event.tag === 'periodic-sync') {
-    event.waitUntil(syncData());
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
+
+workbox.routing.registerRoute(
+  new RegExp('/*'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: CACHE
+  })
+);
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try {
+        const preloadResp = await event.preloadResponse;
+
+        if (preloadResp) {
+          return preloadResp;
+        }
+
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.match(offlineFallbackPage);
+        return cachedResp;
+      }
+    })());
   }
 });
