@@ -1,131 +1,78 @@
-  {
-  "name": "Mansite Simple",
-  "short_name": "MAN",
-  "description": "Aplikasi web keren",
-  "display": "standalone",
-  "start_url": "./?utm_source=pwa_install",
-  "scope": ".",
-  "theme_color": "#000",
-  "background_color": "#000",
-  "id": "/",
+{
+  "background_color": "#000000",
+  "description": "Mansitee Simple Progressive Web App (PWA) template",
   "dir": "ltr",
-  "lang": "en",
-  "launch_handler": {
-    "client_mode": "focus-existing"
-  }, 
+  "display": "standalone",
+  "name": "Mansite Simple PWA",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "Mansite Simple PWA",
+  "start_url": "/",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "img/android-chrome-36x36.png",
-      "sizes": "36x36",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-48x48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-256x256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "img/maskable_icon.png",
-      "sizes": "650x650",
+      "src": "./favicon-32x32.png",
       "type": "image/png",
-      "purpose": "maskable"
+      "sizes": "32x32"
+    },
+    {
+      "src": "./favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "./favicon.ico"
+    },
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "./safari-pinned-tab.svg"
+    },
+    {
+      "src": "https://Mansitee.github.io/share.jpg"
+    },
+    {
+      "src": "./mstile-144x144.png"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
     }
   ],
-  
-  "orientation": "portrait",
+  "lang": "id",
+  "display_override": [
+    "browser",
+    "minimal-ui",
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "shortcuts": [
+    {
+      "name": "Man",
+      "url": "https://mansitee.github.io/app/",
+      "description": "Test"
+    }
+  ],
   "categories": [
     "books",
+    "business",
+    "education",
     "entertainment",
-    "food",
     "lifestyle",
     "music",
-    "news",
     "personalization",
+    "productivity",
     "utilities"
   ],
   "share_target": {
     "method": "GET",
     "action": "/app/",
     "params": {
-      "title": "App",
-      "text": "Pintasa",
-      "url": "https://mansitee.github.io"
+      "title": "Man app",
+      "text": "Testimoni dari data yang tidak ada",
+      "url": "https://mansitee.github.io/app/test/website.html"
     }
-  },
-  
-  "shortcuts": [
-  {
-    "name": "News Feed",
-    "url": "/app/b",
-    "description": "Noteworthy news from today."
-  },
-  {
-    "name": "New Post",
-    "url": "/app/l",
-    "description": "Create a new post."
   }
-]
-
-  "display_override": [
-    "standalone",
-    "window-controls-overlay",
-    "browser"
-  ],
-  "edge_side_panel": {
-    "preferred_width": 600
-  },
-  "related_applications": [
-    {
-      "id": "com.twitter.android",
-      "platform": "chromeos_play",
-      "url": "https://play.google.com/store/apps/details?id=com.twitter.android"
-    },
-    {
-      "platform": "play",
-      "id": "com.facebook.lite"
-    },
-    
-    {
-      "id": "com.google.android.apps.youtube.music",
-      "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music"
-    }
-  ],
-  
-  "prefer_related_applications": true
 }
