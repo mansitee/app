@@ -8,6 +8,8 @@
   "theme_color": "#000",
   "background_color": "#000",
   "id": "/",
+  "dir": "ltr",
+  "lang": "en",
   "launch_handler": {
     "client_mode": "focus-existing"
   }, 
@@ -64,8 +66,7 @@
       "purpose": "maskable"
     }
   ],
-  "description": "Simple pwa sedang dalam perjalanan menuju kesuksesan",
-  "lang": "id",
+  
   "orientation": "portrait",
   "categories": [
     "books",
@@ -86,6 +87,20 @@
       "url": "https://mansitee.github.io"
     }
   },
+  
+  "shortcuts": [
+  {
+    "name": "News Feed",
+    "url": "/app/b",
+    "description": "Noteworthy news from today."
+  },
+  {
+    "name": "New Post",
+    "url": "/app/l",
+    "description": "Create a new post."
+  }
+]
+
   "display_override": [
     "standalone",
     "window-controls-overlay",
@@ -114,5 +129,3 @@
   
   "prefer_related_applications": true
 }
-
-
