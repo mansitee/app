@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub File Manager</title>
+  <style>
+    /* Your CSS styles here */
+ 
+    div {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #app {
+      tmargin: 20px;
+      padding:2px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+#app h1{tposition: fixed;
+            top:2px;
+            left: 0;
+            width: 100%;
+            background-color: #f9f9f9;}
+    #repoList {
+      display: flex;
+      overflow-x: auto;
+      position: fixed;
+            top:2px;
+            left: 0;
+            width: 100%;
+            background-color: #f9f9f9;
+    }
+
+    #repoList li {
+      white-space: nowrap;
+      padding: 10px; margin:2px;width: 100%;
+    }
+
+    #fileList {
+      /* Your file list styles here */
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>GitHub Repositories</h1>
+    <ul id="repoList">
+      <!-- Repo list will be populated here -->
+    </ul>
+    <ul id="fileList">
+      <!-- File list will be populated here -->
+    </ul>
+  </div>
+  
+  <script>
+    window.onload = function() {
+      const repoList = document.getElementById('repoList');
+      const fileList = document.getElementById('fileList');
+
+      // Function to fetch repositories from GitHub API
+      function fetchRepos() {
+        fetch('https://api.github.com/users/mansitee/repos')
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(repo => {
+              const listItem = document.createElement('li');
+              listItem.textContent = repo.name;
+              listItem.addEventListener('click', () => fetchFiles(repo.name));
+              repoList.appendChild(listItem);
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching repos:', error);
+          });
+      }
+
+      // Function to fetch files from a repository
+      function fetchFiles(repoName) {
+        fetch(`https://api.github.com/repos/mansitee/${repoName}/contents`)
+          .then(response => response.json())
+          .then(data => {
+            fileList.innerHTML = ''; // Clear previous file list
+            data.forEach(item => {
+              const itemElement = document.createElement('li');
+              if (item.type === 'file') {
+                itemElement.textContent = `${item.name} (${formatBytes(item.size)}) - ${getFileExtension(item.name)}`;
+                itemElement.addEventListener('click', () => fetchFileContent(repoName, item.path));
+              } else if (item.type === 'dir') {
+                itemElement.textContent = item.name + '/';
+                itemElement.classList.add('folder');
+                itemElement.addEventListener('click', () => fetchFilesInFolder(repoName, item.path));
+              }
+              fileList.appendChild(itemElement);
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching files:', error);
+          });
+      }
+
+      // Function to fetch files in a folder
+      function fetchFilesInFolder(repoName, folderPath) {
+        fetch(`https://api.github.com/repos/mansitee/${repoName}/contents/${folderPath}`)
+          .then(response => response.json())
+          .then(data => {
+            fileList.innerHTML = ''; // Clear previous file list
+            data.forEach(item => {
+              const itemElement = document.createElement('li');
+              if (item.type === 'file') {
+                itemElement.textContent = `${item.name} (${formatBytes(item.size)}) - ${getFileExtension(item.name)}`;
+                itemElement.addEventListener('click', () => fetchFileContent(repoName, item.path));
+              } else if (item.type === 'dir') {
+                itemElement.textContent = item.name + '/';
+                itemElement.classList.add('folder');
+                itemElement.addEventListener('click', () => fetchFilesInFolder(repoName, `${folderPath}/${item.name}`));
+              }
+              fileList.appendChild(itemElement);
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching files in folder:', error);
+          });
+      }
+
+      // Function to fetch file content
+      function fetchFileContent(repoName, filePath) {
+        fetch(`https://api.github.com/repos/mansitee/${repoName}/contents/${filePath}`)
+          .then(response => response.json())
+          .then(data => {
+            // Assuming the file content is encoded in base64
+            const decodedContent = atob(data.content);
+            alert(decodedContent); // Display file content, you can customize this part
+          })
+          .catch(error => {
+            console.error('Error fetching file content:', error);
+          });
+      }
+
+      // Function to format file size (convert bytes to KB, MB, etc.)
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      // Function to get file extension from filename
+      function getFileExtension(filename) {
+        return filename.split('.').pop();
+      }
+
+      // Call fetchRepos function when the page loads
+      fetchRepos();
+    };
+  </script>
+</body>
+</html>
